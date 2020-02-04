@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const jsonMiddleware = bodyParser.json();
 const cors = require('cors');
 const corsMiddleware = cors();
-const port = 4000;
+const port = process.env.PORT || 4000;
 const Dinner = require('./dinner/model');
 
 app.use(corsMiddleware);
