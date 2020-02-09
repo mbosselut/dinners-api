@@ -17,8 +17,9 @@ app.get('/dinner', (req, res, next) => {
 });
 
 app.post('/dinner', (req, res, next) => {
-  console.log(req.body);
-  Dinner.create(req.body);
+  Dinner.create(req.body)
+    .then(dinner => res.json(dinner))
+    .catch(next);
 });
 
 app.delete('/dinner/:dinnerId', (req, res, next) => {
