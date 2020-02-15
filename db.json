@@ -1,0 +1,10 @@
+{
+  "dinners": [
+    {
+      "id": 1,
+      "meal": "Pasta",
+      "date": "01-01-2020",
+      "diet": "vegetarian"
+    }
+  ]
+}
