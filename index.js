@@ -20,12 +20,10 @@ app.post('/dinner', async (req, res, next) => {
   const alreadyExists = await Dinner.findOne({
     where: { date: req.body.date }
   }).then(dinner => {
-    console.log(dinner);
     return dinner;
   });
-  console.log('EXISTS?', alreadyExists);
   if (alreadyExists) {
-    res.status(500).send('There is already a dinner at this date.!');
+    res.status(500).send('There is already a dinner at this date.');
   } else {
     Dinner.create(req.body)
       .then(dinner => res.json(dinner))
